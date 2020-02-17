@@ -1,25 +1,25 @@
 # Code style
-======
+
 
 ## Variable
 
 ### Variable naming
 
 - Boolean - starts with **is**
-======
+
 
 ### Variable locations
 
 Variable for business logic layer located in redux.
 Variable for presentation logic layer located located in state of the component to which it relates.
-======
+
 
 ## Functions naming
 
 - Getters (returns some data) starts with **get**
 - Setters (set some data) starts with **set**
 - Creators (create and return new data) starts with **create**
-======
+
 
 ## Architecture
 
@@ -27,9 +27,9 @@ Variable for presentation logic layer located located in state of the component 
   <img height="250" src="https://github.com/ChernenkoDmitriy/initProject/blob/master/img/sheme.JPG" />
 </p>
 
-======
+
 ### Business logic layer
-======
+
 
 **Business logic** - it's logic which can be reused on other projects and does not depends on frameworks, languages and libraries(redux, mobX, saga).
 All business logic located an folder **services**.
@@ -43,7 +43,7 @@ The name of the interface ends with the **Interface**.
 </p>
 
 ### Presentation logic layer
-======
+
 
 **Presentation logic** - it is a logic representation of a component that depends on business logic.
 Presentation logic located next to the component to which it refers.
