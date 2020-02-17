@@ -23,6 +23,8 @@ Variable for presentation logic layer located located in state of the component 
 
 ## Architecture
 
+(https://github.com/ChernenkoDmitriy/initProject/blob/master/img/sheme.JPG "Logo Title Text 1")
+
 ======
 ### Business logic layer
 ======
@@ -33,6 +35,8 @@ All business logic located an folder **services**.
 Functions are imported from business logic via interfaces (wrapper function) to prevent direct dependence of upper-level components from the lower.
 Functions that are used for the business logic of one entity should not be reused for the business logic of another entity to prevent accidental changes.
 The name of the interface ends with the **Interface**.
+
+(https://github.com/ChernenkoDmitriy/initProject/blob/master/img/exampleSingle.JPG "Logo Title Text 2")
 
 ### Presentation logic layer
 ======
