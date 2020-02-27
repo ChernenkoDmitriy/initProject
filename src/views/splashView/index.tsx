@@ -15,7 +15,7 @@ const SplashView: FC<Props> = ({ navigation }) => {
     useEffect(() => {
         setTimeout(() => {
             dispatch(loadingSplashView(false));
-        }, 2000);
+        }, 500);
     }, [])
 
     return (

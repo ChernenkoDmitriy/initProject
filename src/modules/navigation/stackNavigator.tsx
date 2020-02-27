@@ -30,7 +30,7 @@ export const AppStackNavigator: FC = () => {
                         <Stack.Screen name="AppTabNavigator" component={AppTabNavigator} options={{ headerTitleAlign: 'center', }} />
                         :
                         <>
-                            <Stack.Screen name="AuthorizationView" component={AuthorizationView} options={{ headerTitleAlign: 'center' }} />
+                            <Stack.Screen name="AuthorizationView" component={AuthorizationView} options={{ headerShown: false }} />
                             <Stack.Screen name="RecoverPasswordView" component={RecoverPasswordView} options={{ headerTitleAlign: 'center' }} />
                             <Stack.Screen name="RegistrationView" component={RegistrationView} options={{ headerTitleAlign: 'center' }} />
                         </>

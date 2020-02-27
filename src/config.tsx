@@ -30,7 +30,7 @@ export const config = {
 			dark: false,
 			colors: {
 				primary: 'rgb(0, 0, 0)',
-				background: 'rgb(242, 242, 242)',
+				background: 'rgb(100, 100, 100)',
 				card: 'rgb(255, 255, 255)',
 				text: 'rgb(0, 0, 0)',
 				border: 'rgb(199, 199, 204)',
