@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { config } from '../../config';
 
 export const styles = StyleSheet.create({
     container: {
@@ -20,6 +21,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textAccount: {
+        ...config.TEXT_STYLE.largeText,
         color: '#FFFFFF',
         textAlign: 'center',
     },

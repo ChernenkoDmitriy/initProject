@@ -9,6 +9,7 @@ import { LinklButton } from '../../components/linkButton/linkButton';
 import { LocalizationContext } from '../../i18n/indes';
 import { MaterialInputWithSVG } from '../../components/materialInputWithSVG';
 import EmailIcon from '../../assets/svg/email';
+import { useTheme } from '@react-navigation/native';
 
 interface Props {
     navigation: any;
@@ -18,6 +19,7 @@ const AuthorizationView: FC<Props> = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { t } = useContext(LocalizationContext);
+    const { colors } = useTheme();
     const dispatch: AppDispatch = useDispatch()
 
     const onChangeEmail = (text: String) => {

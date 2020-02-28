@@ -6,4 +6,5 @@ export const user = {
     cipher: [15, 23, 65, 48, 57],
     email: 'email@email.com',
     teams: ['online wallet', 'helper'],
+    events: [],
 };
