@@ -12,6 +12,7 @@ interface RootState {
       card: String;
       text: String;
       border: String;
+      dark: Boolean;
     };
   };
 }

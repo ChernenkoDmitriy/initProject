@@ -27,16 +27,18 @@ export const config = {
 				card: 'rgb(10, 10, 10)',
 				text: 'rgb(255, 255, 255)',
 				border: 'rgb(50, 50, 50)',
+				dark: true,
 			},
 		},
 		light: {
 			dark: false,
 			colors: {
 				primary: 'rgb(0, 0, 0)',
-				background: 'rgb(100, 100, 100)',
+				background: 'rgb(233, 233, 233)',
 				card: 'rgb(255, 255, 255)',
 				text: 'rgb(0, 0, 0)',
 				border: 'rgb(199, 199, 204)',
+				dark: false,
 			},
 		}
 	}

@@ -1,10 +1,10 @@
-// import { Action } from "./appStateActions";
+import { Action } from "./appStateActions";
 
-// interface InitialState {
-//     isSignUp: Boolean;
-//     userToken: String;
-//     isLoadingSplashView: Boolean;
-// }
+interface InitialState {
+    isSignUp: Boolean;
+    userToken: String;
+    isLoadingSplashView: Boolean;
+}
 
 const initialState = {
     isSignUp: false,
@@ -12,8 +12,7 @@ const initialState = {
     isLoadingSplashView: true,
 };
 
-// export default function appState(state: InitialState = initialState, action: Action) {
-export default function appState(state = initialState, action) {
+export default function appState(state: InitialState = initialState, action: Action) {
     const { type, data } = action;
     switch (type) {
         case 'SIGN_UP':

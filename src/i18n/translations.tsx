@@ -1,5 +1,7 @@
 export const translations = {
     "ru": {
+        signIn: 'Авторизоваться',
+        signUp: 'Зарегистрироваться',
         email: 'Почта',
         password: 'Пароль',
         needSignUp: 'Нет аккаунта? Зарегистрируйся',
@@ -7,6 +9,8 @@ export const translations = {
         signInto: 'Войдите в свой аккаунт',
     },
     "en": {
+        signIn: 'sign in',
+        signUp: 'sign up',
         email: 'Email',
         password: 'Password',
         needSignUp: `Don't have an account? Sign Up`,
