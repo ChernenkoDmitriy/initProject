@@ -15,6 +15,8 @@ interface Props {
 }
 
 const RegistrationView: FC<Props> = ({ navigation }) => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { t } = useContext(LocalizationContext);
@@ -26,20 +28,22 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
         setEmail(text);
     }
 
+    const navigateToAuthorizationView = () => {
+        navigation.navigate('AuthorizationView');
+    }
+
     return (
         <KeyboardAvoidingView style={styles.container} onStartShouldSetResponder={Keyboard.dismiss}>
-            <Text style={styles.textAccount}>{t('signInto')}</Text>
+            <Text style={styles.textAccount}>{t('signUpWithEmail')}</Text>
             <View style={styles.inputsWrapper}>
+                <MaterialInputWithSVG value={firstName} onChangeText={setFirstName} placeholder={t('firstName')} isDark={dark} />
+                <MaterialInputWithSVG value={lastName} onChangeText={setLastName} placeholder={t('lastName')} isDark={dark} />
                 <MaterialInputWithSVG value={email} onChangeText={onChangeEmail} placeholder={t('email')} icon={<EmailIcon color={dark ? '#FFF' : '#000'} />} isDark={dark} />
                 <MaterialInputWithSVG value={password} onChangeText={setPassword} placeholder={t('password')} isDark={dark} />
-                <View style={styles.forgotPassWrapper}>
-                    <View style={{ flex: 1 }} />
-                    <LinklButton onPress={() => { }} title={t('forgotPass')} isDark={dark} />
-                </View>
             </View>
             <View style={styles.buttonsWrapper}>
                 <MaterialButton onPress={() => { }} title={t('signUp')} />
-                <LinklButton onPress={() => { }} title={t('needSignUp')} isDark={dark} />
+                <LinklButton onPress={navigateToAuthorizationView} title={t('alreadySignUp')} isDark={dark} />
             </View>
         </KeyboardAvoidingView>
     )

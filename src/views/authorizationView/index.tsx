@@ -27,20 +27,24 @@ const AuthorizationView: FC<Props> = ({ navigation }) => {
         setEmail(text);
     }
 
+    const navigateToRegistrationView = () => {
+        navigation.navigate('RegistrationView');
+    }
+
     return (
         <KeyboardAvoidingView style={styles.container} onStartShouldSetResponder={Keyboard.dismiss}>
             <Text style={styles.textAccount}>{t('signInto')}</Text>
             <View style={styles.inputsWrapper}>
                 <MaterialInputWithSVG value={email} onChangeText={onChangeEmail} placeholder={t('email')} icon={<EmailIcon color={dark ? '#FFF' : '#000'} />} isDark={dark} />
-                <MaterialInputWithSVG value={password} onChangeText={setPassword} placeholder={t('password')} isDark={dark}/>
+                <MaterialInputWithSVG value={password} onChangeText={setPassword} placeholder={t('password')} isDark={dark} />
                 <View style={styles.forgotPassWrapper}>
                     <View style={{ flex: 1 }} />
-                    <LinklButton onPress={() => { }} title={t('forgotPass')} isDark={dark}/>
+                    <LinklButton onPress={() => { }} title={t('forgotPass')} isDark={dark} />
                 </View>
             </View>
             <View style={styles.buttonsWrapper}>
                 <MaterialButton onPress={() => { dispatch(signUp(true)) }} title={t('signIn')} />
-                <LinklButton onPress={() => { }} title={t('needSignUp')} isDark={dark}/>
+                <LinklButton onPress={navigateToRegistrationView} title={t('needSignUp')} isDark={dark} />
             </View>
         </KeyboardAvoidingView>
     )

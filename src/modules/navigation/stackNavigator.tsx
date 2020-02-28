@@ -32,7 +32,7 @@ export const AppStackNavigator: FC = () => {
                         <>
                             <Stack.Screen name="AuthorizationView" component={AuthorizationView} options={{ headerShown: false }} />
                             <Stack.Screen name="RecoverPasswordView" component={RecoverPasswordView} options={{ headerTitleAlign: 'center' }} />
-                            <Stack.Screen name="RegistrationView" component={RegistrationView} options={{ headerTitleAlign: 'center' }} />
+                            <Stack.Screen name="RegistrationView" component={RegistrationView} options={{ headerShown: false }} />
                         </>
              }
         </Stack.Navigator>
