@@ -9,6 +9,7 @@ import { MaterialInputWithSVG } from '../../components/materialInputWithSVG';
 import { LinklButton } from '../../components/linkButton/linkButton';
 import { MaterialButton } from '../../components/materialButton';
 import EmailIcon from '../../assets/svg/email';
+import { AgreementButton } from '../../components/agreementButton';
 
 interface Props {
     navigation: any;
@@ -32,6 +33,14 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
         navigation.navigate('AuthorizationView');
     }
 
+    const navigateToAgreementView = () => {
+        navigation.navigate('AgreementView');
+    }
+
+    const onPressChackBox = () => {
+
+    }
+
     return (
         <KeyboardAvoidingView style={styles.container} onStartShouldSetResponder={Keyboard.dismiss}>
             <Text style={styles.textAccount}>{t('signUpWithEmail')}</Text>
@@ -40,6 +49,7 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
                 <MaterialInputWithSVG value={lastName} onChangeText={setLastName} placeholder={t('lastName')} isDark={dark} />
                 <MaterialInputWithSVG value={email} onChangeText={onChangeEmail} placeholder={t('email')} icon={<EmailIcon color={dark ? '#FFF' : '#000'} />} isDark={dark} />
                 <MaterialInputWithSVG value={password} onChangeText={setPassword} placeholder={t('password')} isDark={dark} />
+                <AgreementButton text={t('agreeToAgreement')} isDark={dark} navigateToAgreementView={navigateToAgreementView} onPressChackBox={onPressChackBox}/>
             </View>
             <View style={styles.buttonsWrapper}>
                 <MaterialButton onPress={() => { }} title={t('signUp')} />

@@ -1,5 +1,6 @@
 export const translations = {
     ru: {
+        agreeToAgreement: 'Я ознакомился и согласен с правилами и условиями',
         firstName: 'Имя',
         lastName: 'Фамилия',
         signUpWithEmail: 'Зарегистрируйтесь через почту',
@@ -13,6 +14,7 @@ export const translations = {
         signInto: 'Войдите в свой аккаунт',
     },
     en: {
+        agreeToAgreement: 'I read and agree to Terms & Conditions',
         firstName: 'First name',
         lastName: 'Last name',
         signUpWithEmail: 'Sign with Email',

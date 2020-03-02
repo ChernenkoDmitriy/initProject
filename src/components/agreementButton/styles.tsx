@@ -4,19 +4,20 @@ import { config } from '../../config';
 export const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
+        alignItems: 'center',
     },
-    highlightContainer:{
-        height: 40,
-        width: 40,
-        borderRadius: 5,
+    highlightContainer: {
+        height: 30,
+        width: 30,
+        borderRadius: 4,
         alignItems: 'center',
         justifyContent: 'center',
     },
     checkBoxContainer: {
-        height: 34,
-        width: 34,
+        height: 20,
+        width: 20,
         borderWidth: 1,
-        borderRadius: 5,
+        borderRadius: 4,
         alignItems: 'center',
         justifyContent: 'center',
     },
