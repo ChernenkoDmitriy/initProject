@@ -1,12 +1,16 @@
 import { StyleSheet } from 'react-native';
 import { config } from '../../config';
+import { Dimensions, StatusBar } from 'react-native';
+
+const { height } = Dimensions.get("window");
 
 export const getStyle = (colors: any) => {
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
-            paddingHorizontal: 20,
             justifyContent: 'space-around',
+            height: height - StatusBar.currentHeight,
+            paddingHorizontal: 20,
+            width: '100%',
         },
         inputsWrapper: {
             height: 240,

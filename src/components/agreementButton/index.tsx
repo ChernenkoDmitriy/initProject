@@ -50,7 +50,9 @@ export const AgreementButton: FC<AgreementButton> = ({ navigateToAgreementView, 
                     </View>
                 </View>
             </TouchableOpacity>
-            <LinklButton onPress={navigateToAgreementView} title={text} isDark={isDark} />
+            <View style={styles.buttonLinkWrapper}>
+                <LinklButton onPress={navigateToAgreementView} title={text} isDark={isDark} />
+            </View>
         </View >
     );
 };

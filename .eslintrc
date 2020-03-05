@@ -1,0 +1,89 @@
+// "off" or 0 - turn the rule off
+// "warn" or 1 - turn the rule on as a warning (doesn't affect exit code)
+// "error" or 2 - turn the rule on as an error (exit code will be 1)
+
+{
+	"env": {"browser": true,"es6": true},
+	"extends": ["eslint:recommended","plugin:react/recommended"],
+	"globals": {"Atomics": "readonly","SharedArrayBuffer": "readonly"},
+	"parserOptions": {"ecmaFeatures": {"jsx": true},"ecmaVersion": 2018,"sourceType": "module"},
+	"plugins": ["react"],
+	"rules": {
+		
+		                                                               //*** Possible Errors ***//
+		 "react/prop-types": ["off", { "ignore": "ignore", "customValidators": "customValidator", "skipUndeclared": "skipUndeclared" }],
+		// "indent": ["error", "tab"],
+		"quotes": ["error","single"], // требует использования одинарных кавычек, где это возможно
+		"semi": ["error","always"], // требует точки с запятой в конце операторов
+		"semi-spacing": ["error", {"before": false, "after": false}], // Этот параметр устанавливает интервал перед точкой с запятой и запрещает интервал после точки с запятой https://eslint.org/docs/rules/semi-spacing
+		"no-console": ["error", { "allow": ["warn", "error"] }], // использование вызовов console.log должно быть удалено перед отправкой в ​​производство (console.warn console.error разрешено) https://eslint.org/docs/rules/no-console
+		"no-trailing-spaces": "error", // это правило запрещает конечные пробелы (пробелы, табуляции и другие символы пробела Юникода) в конце строк https://eslint.org/docs/rules/no-trailing-spaces
+		"for-direction": "error", // не позволяет установить бесконечный цикл for https://eslint.org/docs/rules/for-direction
+		"no-compare-neg-zero": "error", // Запрещает сравнение с отрицательным нулем https://eslint.org/docs/rules/no-compare-neg-zero
+		"no-cond-assign": "error", // запрещает неоднозначные оператор присваивания в тестовых условиях if, for, whileи do...while https://eslint.org/docs/rules/no-cond-assign
+		"no-constant-condition": ["error", { "checkLoops": false }], //Это правило запрещает использование константных выражений в условиях теста:if, for, while Или do...while, ?: тернарка https://eslint.org/docs/rules/no-constant-condition
+		"no-dupe-args": "error", // запрещает дублирование имен параметров в объявлениях функций или выражениях. Это не относится к функциям стрелок или методам класса https://eslint.org/docs/rules/no-dupe-args
+		"no-dupe-else-if": "error", // это правило запрещает дублирование условий в одной if-else-if цепочке https://eslint.org/docs/rules/no-dupe-else-if
+		"no-dupe-keys": "error", // запрещает дублирование ключей в литералах объекта https://eslint.org/docs/rules/no-dupe-keys
+		"no-duplicate-case": "error", // запрещает дублирование тестовых выражений в case предложениях switch операторов https://eslint.org/docs/rules/no-duplicate-case
+		"no-empty": "error", // запрещает пустые операторы блока. Это правило игнорирует операторы блока, которые содержат комментарий https://eslint.org/docs/rules/no-empty
+		"no-extra-boolean-cast": "error", // запрещает ненужные логические преобразования https://eslint.org/docs/rules/no-extra-boolean-cast
+		//https://eslint.org/docs/rules/no-extra-parens (ненужные скобки)  https://eslint.org/docs/rules/no-extra-semi (ненужные точки с запятой) https://eslint.org/docs/rules/no-inner-declarations(не поняла)
+		"no-func-assign": "error", // запрещает переопределение ф-ций до их объявления https://eslint.org/docs/rules/no-func-assign
+		"no-import-assign": "error", // предупреждает переопределения, приращения и убывания импортированных данных https://eslint.org/docs/rules/no-import-assign
+		"no-sparse-arrays": "error", // запрещает использование литералов разреженных массивов, имеющих «дыры», в которых перед запятыми не стоят элементы https://eslint.org/docs/rules/no-sparse-arrays
+		"no-template-curly-in-string": "error", // предупреждение, когда обычная строка содержит то, что выглядит как заполнитель литерала шаблона (''->``) https://eslint.org/docs/rules/no-template-curly-in-string
+		"no-unexpected-multiline": "error", // запрещает вводить в заблуждение многострочные выражения https://eslint.org/docs/rules/no-unexpected-multiline
+		"no-unreachable": "error", // запрещает недостижимый код после return, throw, continueи break https://eslint.org/docs/rules/no-unreachable
+		"valid-typeof": "error", // требует, чтобы typeof выражения сравнивались только со строковыми литералами или другими typeof выражениями, и запрещает сравнение с любым другим значением (error is strign or nunber) https://eslint.org/docs/rules/valid-typeof
+		"use-isnan": "error", // запрещает сравнение с «NaN» через ===. Только isNaN https://eslint.org/docs/rules/use-isnan
+		
+		                                                               //*** Best Practices ***//
+
+		"array-callback-return": "error", // запрещает использование методов фильтрации массивов без return (from, every, filter, find, findIndex, map, reduce, reduceRight, some, sort). Если вы не хотите использовать возврат, используйте forEach https://eslint.org/docs/rules/array-callback-return
+		"block-scoped-var": "error", // запрещает снова определять var? в данной области видимости https://eslint.org/docs/rules/block-scoped-var
+		//https://eslint.org/docs/rules/consistent-return(return undefined) https://eslint.org/docs/rules/no-useless-concat https://eslint.org/docs/rules/no-unmodified-loop-condition https://eslint.org/docs/rules/no-labels https://eslint.org/docs/rules/no-extra-label https://eslint.org/docs/rules/no-extra-bind 
+		//https://eslint.org/docs/rules/no-extend-native https://eslint.org/docs/rules/guard-for-in(использовании for in) https://eslint.org/docs/rules/no-case-declarations https://eslint.org/docs/rules/no-empty-pattern
+		//https://eslint.org/docs/rules/no-warning-comments https://eslint.org/docs/rules/no-with https://eslint.org/docs/rules/prefer-promise-reject-errors
+		"default-case": ["error", { "commentPattern": "^skip\\sdefault" }], // запрещает не указывать default регистр в switch заявлениях. Если указать комментарий // skip default, то default можно не прописывать https://eslint.org/docs/rules/default-case
+		"curly": "error", // предупреждает, когда if, else, for, while, или do используются без фигурных скобок https://eslint.org/docs/rules/curly
+		"dot-notation": "error", // направлено на поддержание согласованности кода и улучшение читабельности кода путем поощрения использования стиля точечной нотации, когда это возможно https://eslint.org/docs/rules/dot-notation
+		"no-alert": "error", //  будет предупреждать, когда он сталкивается c alert, prompt и confirm https://eslint.org/docs/rules/no-alert
+		"eqeqeq": ["error", "always"], // устранение небезопасных операторов равенства https://eslint.org/docs/rules/eqeqeq
+		"no-empty-function": "error", // устранение пустых функций https://eslint.org/docs/rules/no-empty-function
+		"no-eq-null": "error", // сравнения с null https://eslint.org/docs/rules/no-eq-null
+		"no-fallthrough": "error", // устраняет case без break https://eslint.org/docs/rules/no-fallthrough
+		"no-floating-decimal": "error", // устранение плавающих десятичных точек и будет предупреждать всякий раз, когда числовое значение имеет десятичную точку, но отсутствует число до или после него https://eslint.org/docs/rules/no-floating-decimal
+		"no-global-assign": "error", // Это правило запрещает изменение глобальных переменных, которые только для чтения (Object, undefined, window, length, top, const a) https://eslint.org/docs/rules/no-global-assign
+		"no-implicit-coercion": "error", // предназначено для обозначения более коротких и понятных обозначений для преобразования типов (Boolean, Number, String) https://eslint.org/docs/rules/no-implicit-coercion
+		"no-magic-numbers": "error", //  сделать код более читабельным и упростить рефакторинг, гарантируя, что специальные числа объявляются как константы, чтобы сделать их смысл явным https://eslint.org/docs/rules/no-magic-numbers
+		"no-loop-func": "error", // запрещает любую функцию в цикле, которая содержит небезопасные ссылки (например, на измененные переменные из внешней области) https://eslint.org/docs/rules/no-loop-func
+		"no-implied-eval": "error", // устранение подразумеваемых eval()посредством использования setTimeout(), setInterval()или execScript(). Таким образом, он будет предупреждать, когда любая функция используется со строкой в ​​качестве первого аргумента.
+		"no-implicit-globals": ["error", {"lexicalBindings": false}], // запрещает повторное объявление глобальных переменных только для чтения и присвоение глобальным переменным только для чтения https://eslint.org/docs/rules/no-implicit-globals
+		"no-multi-spaces":"error", // запрещает множественные пробелы вокруг логических выражений, условных выражений, объявлений, элементов массива, свойств объекта, последовательностей и параметров функций https://eslint.org/docs/rules/no-multi-spaces
+		"no-multi-str": "error", // предотвращение использования многострочных строк https://eslint.org/docs/rules/no-multi-str
+		"no-new": "error", // запрет вызовов конструктора с использованием new ключевого слова, которое не присваивает результирующий объект переменной https://eslint.org/docs/rules/no-new-wrappers
+		"no-new-wrappers": "error", // устранение использования String, Numberи Boolean с new оператором https://eslint.org/docs/rules/no-new-wrappers
+		"no-octal": "error", // запрещает определять number с ведущим нулём (071) https://eslint.org/docs/rules/no-octal
+		"no-redeclare": "error", // устранение переменных, которые имеют несколько объявлений в одной и той же области видимости
+		"no-self-assign": "error", //  устранение самостоятельных назначений (foo = foo) https://eslint.org/docs/rules/no-self-assign
+		"no-self-compare": "error", // устранение сравнение переменной с ней же (х===х) https://eslint.org/docs/rules/no-self-compare
+		"no-useless-return": "error", // направлено на то, чтобы сообщать о лишних return утверждениях https://eslint.org/docs/rules/no-useless-return
+		"no-void": "error", // исключение использования оператора void https://eslint.org/docs/rules/no-void
+		"radix": "error", // предотвращение непреднамеренного преобразования строки в число https://eslint.org/docs/rules/radix
+		"require-await": "error", // предупреждает асинхронные функции, которые не имеют await выражения https://eslint.org/docs/rules/require-await
+		"yoda": "error", // Если это значение по умолчанию "never", то сравнения никогда не должны соответствовать условиям Йоды https://eslint.org/docs/rules/yoda
+
+		                                                               //*** Variables ***//
+
+		"init-declarations": ["error", "always"], // необходимо обеспечить инициализацию при объявлении https://eslint.org/docs/rules/init-declarations
+		//https://eslint.org/docs/rules/no-shadow
+		"no-shadow-restricted-names": "error", // запрещает определение NaN, Infinity, undefined... https://eslint.org/docs/rules/no-shadow-restricted-names
+		"no-undef": "error", // Любая ссылка на необъявленную переменную вызывает предупреждение, если только переменная явно не упомянута в /*global ...*/комментарии или не указана в globals ключе в файле конфигурации https://eslint.org/docs/rules/no-undef
+		"no-undef-init": "error", // исключение объявлений переменных, которые инициализируются в undefined https://eslint.org/docs/rules/no-undef-init
+		"no-undefined": "error", // исключение использования undefined и, как таковое, генерирует предупреждение при каждом его использовании https://eslint.org/docs/rules/no-undefined
+		"no-unused-vars": "error", // устранение неиспользуемых переменных, функций и параметров функции https://eslint.org/docs/rules/no-unused-vars
+		"no-use-before-define": "error"// предупредит, когда встретит ссылку на идентификатор, который еще не был объявлен https://eslint.org/docs/rules/no-use-before-define
+
+	}
+}

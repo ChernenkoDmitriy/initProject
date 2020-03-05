@@ -1,5 +1,9 @@
 export const translations = {
     ru: {
+        language: 'Язык',
+        theme: 'Темная тема',
+        settingsProfile: 'Настройки профиля',
+        createTeam: 'Создать команду',
         agreeToAgreement: 'Я ознакомился и согласен с правилами и условиями',
         firstName: 'Имя',
         lastName: 'Фамилия',
@@ -14,6 +18,10 @@ export const translations = {
         signInto: 'Войдите в свой аккаунт',
     },
     en: {
+        language: 'Language',
+        theme: 'Dark theme',
+        settingsProfile: 'Profile settings',
+        createTeam: 'Create team',
         agreeToAgreement: 'I read and agree to Terms & Conditions',
         firstName: 'First name',
         lastName: 'Last name',
