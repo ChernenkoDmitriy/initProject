@@ -21,7 +21,4 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonLinkWrapper: {
-        flex: 1,
-    }
 });

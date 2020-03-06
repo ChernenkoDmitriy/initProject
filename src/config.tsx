@@ -1,7 +1,3 @@
-export const LINKS = {
-	REGISTRATION: 'http://10.1.135.69:3000/registration',
-};
-
 const TEXT_STYLE = {
 	smallText: {
 		fontSize: 12,
@@ -31,6 +27,7 @@ export const config = {
 				card: 'rgb(10, 10, 10)',
 				text: 'rgb(255, 255, 255)',
 				border: 'rgb(50, 50, 50)',
+				dark: true,
 			},
 		},
 		light: {
@@ -41,7 +38,13 @@ export const config = {
 				card: 'rgb(255, 255, 255)',
 				text: 'rgb(0, 0, 0)',
 				border: 'rgb(199, 199, 204)',
+				dark: false,
 			},
 		}
 	}
+}
+
+export const LINKS = {
+	AUTHORIZATION: 'AUTHORIZATION',
+	REGISTRATION: 'REGISTRATION',
 }

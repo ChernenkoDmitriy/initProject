@@ -1,5 +1,7 @@
-import { registrate } from "./registration";
+import { IRegistrate } from "./registration";
+import { IAuthorizate } from "./authorization";
 
 export const restFactory = {
-    registrate,
+    IAuthorizate,
+    IRegistrate,
 };

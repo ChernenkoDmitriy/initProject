@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'; // for UI redux 
 import rootReducer from './rootReducer';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
-import rootSaga from '../saga';
+import rootSaga from '../saga/rootSaga';
 
 const persistConfig = {
     key: 'root',
@@ -18,14 +18,16 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [sagaMiddleware];
+
 const store = createStore(
     persistedReducer,
     compose(composeWithDevTools(applyMiddleware(...middleware)))
 );
 
-export type AppDispatch = typeof store.dispatch;
-
-const persistor = persistStore(store);
 sagaMiddleware.run(rootSaga);
 
+const persistor = persistStore(store);
+
 export { store, persistor };
+
+export type AppDispatch = typeof store.dispatch;

@@ -3,15 +3,16 @@ import Axios from 'axios';
 
 const url = LINKS.REGISTRATION;
 
-const registration = async (email, firstName, lastName, password) => {
+const registration = async (firstName, lastName, password, email) => {
     try {
         let response = await Axios({
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            data: { email, firstName, lastName, password },
+            data: { firstName, lastName, password, email },
             url,
+            timeout: 60000,
         }).then(response => {
             console.log('response', response)
             return Promise.resolve(response);
@@ -33,7 +34,7 @@ const checkReponse = (response) => {
     console.log('response', response)
 }
 
-export const registrate = async (email, firstName, lastName, password) => {
-    const response = await registration(email, firstName, lastName, password);
+export const IRegistrate = async (firstName, lastName, password, email) => {
+    const response = await registration(firstName, lastName, password, email);
     return checkReponse(response);
 }
