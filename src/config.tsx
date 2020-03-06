@@ -20,6 +20,14 @@ const TEXT_STYLE = {
 	}
 };
 
+export interface ColorsProps {
+	primary: String,
+	background: String,
+	card: String,
+	text: String,
+	border: String,
+}
+
 export const config = {
 	TEXT_STYLE,
 	theme: {

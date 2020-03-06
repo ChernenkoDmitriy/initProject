@@ -13,10 +13,10 @@ const SplashView: FC<Props> = ({ navigation }) => {
     const dispatch: AppDispatch = useDispatch()
 
     useEffect(() => {
-        setTimeout(() => {
+        // setTimeout(() => {
             dispatch(loadingSplashView(false));
-        }, 500);
-    }, [])
+        // }, 500);
+    }, []);
 
     return (
         <View style={styles.container}>

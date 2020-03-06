@@ -1,12 +1,11 @@
 import { config } from "../../../../config";
-// import { Action } from "./themeAction";
+import { Action } from "./themeAction";
 
 const initialState = {
     ...config.theme.light
 };
 
-// export default function theme(state = initialState, action: Action) {
-export default function theme(state = initialState, action) {
+export default function theme(state = initialState, action: Action) {
     const { type } = action;
     switch (type) {
         case 'CHANGE_THEME':

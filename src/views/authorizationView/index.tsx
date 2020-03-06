@@ -23,7 +23,7 @@ const AuthorizationView: FC<Props> = ({ navigation }) => {
     const styles = useMemo(() => getStyle(colors), [colors]);
     const dispatch: AppDispatch = useDispatch();
 
-    const onChangeEmail = (text: String) => {
+    const onChangeEmail = (text: string) => {
         setEmail(text);
     }
 

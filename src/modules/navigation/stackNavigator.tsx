@@ -7,6 +7,7 @@ import { AppTabNavigator } from './tabNavigator';
 import RegistrationView from '../../views/registrationView';
 import RecoverPasswordView from '../../views/recoverPasswordView';
 import AgreementView from '../../views/agreementView';
+import ChatView from '../../views/chatView';
 
 interface RootState {
     appState: {
@@ -28,8 +29,10 @@ export const AppStackNavigator: FC = () => {
             {
                 isLoadingSplashView ? <Stack.Screen name='SplashView' component={SplashView} options={{ headerShown: false }} /> :
                     isSignUp ?
-                        <Stack.Screen name="AppTabNavigator" component={AppTabNavigator} options={{ headerTitleAlign: 'center', }} />
-                        :
+                        <>
+                            <Stack.Screen name="AppTabNavigator" component={AppTabNavigator} options={{ headerTitleAlign: 'center', }} />
+                            <Stack.Screen name="ChatView" component={ChatView} options={{ headerTitleAlign: 'center', }} />
+                        </> :
                         <>
                             <Stack.Screen name="AuthorizationView" component={AuthorizationView} options={{ headerShown: false }} />
                             <Stack.Screen name="AgreementView" component={AgreementView} options={{ headerShown: false }} />
