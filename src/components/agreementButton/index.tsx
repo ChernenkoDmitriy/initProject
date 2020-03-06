@@ -7,17 +7,17 @@ import Checked from '../../assets/svg/checked';
 interface AgreementButton {
     text: String,
     navigateToAgreementView: Function,
-    onPressChackBox: Function,
+    onPressCheckBox: Function,
     isDark?: Boolean,
 }
 
-export const AgreementButton: FC<AgreementButton> = ({ navigateToAgreementView, text, isDark, onPressChackBox }) => {
+export const AgreementButton: FC<AgreementButton> = ({ navigateToAgreementView, text, isDark, onPressCheckBox }) => {
     const [isPresed, setIsPresed] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
 
     const onPress = () => {
         setIsChecked(state => !state);
-        onPressChackBox();
+        onPressCheckBox();
     }
 
     const onPressIn = () => {

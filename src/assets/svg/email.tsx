@@ -2,9 +2,9 @@ import React, { FC } from "react";
 import Svg, { Path } from "react-native-svg";
 
 interface EmailIconProps {
-  width?: Number,
-  height?: Number,
-  color?: String,
+  width?: number,
+  height?: number,
+  color?: string,
 }
 
 const EmailIcon: FC<EmailIconProps> = ({ width, height, color }) => (

@@ -1,5 +1,5 @@
 import React, { FC, useContext, useMemo, useState } from 'react';
-import { Text, View, KeyboardAvoidingView, Keyboard, ScrollView, Dimensions, StatusBar } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { getStyle } from './styles';
 import { AppDispatch } from '../../modules/redux/store';
@@ -27,7 +27,7 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
     const styles = useMemo(() => getStyle(colors), [colors]);
     const dispatch: AppDispatch = useDispatch();
 
-    const onChangeEmail = (text: String) => {
+    const onChangeEmail = (text: string) => {
         setEmail(text);
     }
 
@@ -39,12 +39,12 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
         navigation.navigate('AgreementView');
     }
 
-    const onPressChackBox = () => {
+    const onPressCheckBox = () => {
 
     }
 
     const registarte = () => {
-        restFactory.registrate(email, firstName, lastName, password);
+        restFactory.IRegistrate(email, firstName, lastName, password);
     }
 
     return (
@@ -56,7 +56,7 @@ const RegistrationView: FC<Props> = ({ navigation }) => {
                     <MaterialInputWithSVG value={lastName} onChangeText={setLastName} placeholder={t('lastName')} isDark={dark} />
                     <MaterialInputWithSVG value={email} onChangeText={onChangeEmail} placeholder={t('email')} icon={<EmailIcon color={dark ? '#FFF' : '#000'} />} isDark={dark} />
                     <MaterialInputWithSVG value={password} onChangeText={setPassword} placeholder={t('password')} isDark={dark} />
-                    <AgreementButton text={t('agreeToAgreement')} isDark={dark} navigateToAgreementView={navigateToAgreementView} onPressChackBox={onPressChackBox} />
+                    <AgreementButton text={t('agreeToAgreement')} isDark={dark} navigateToAgreementView={navigateToAgreementView} onPressCheckBox={onPressCheckBox} />
                 </View>
                 <View style={styles.buttonsWrapper}>
                     <MaterialButton onPress={registarte} title={t('signUp')} />

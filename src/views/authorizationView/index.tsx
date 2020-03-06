@@ -3,13 +3,13 @@ import { View, Keyboard, KeyboardAvoidingView, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { getStyle } from './styles';
 import { AppDispatch } from '../../modules/redux/store';
-import { signUp } from '../../modules/redux/reducersAndActions/appState/appStateActions';
 import { MaterialButton } from '../../components/materialButton';
 import { LinklButton } from '../../components/linkButton/linkButton';
 import { LocalizationContext } from '../../i18n/indes';
 import { MaterialInputWithSVG } from '../../components/materialInputWithSVG';
 import EmailIcon from '../../assets/svg/email';
 import { useTheme } from '@react-navigation/native';
+import { authorizate } from '../../modules/redux/reducersAndActions/authorization/authDataAction';
 
 interface Props {
     navigation: any;
@@ -43,7 +43,7 @@ const AuthorizationView: FC<Props> = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.buttonsWrapper}>
-                <MaterialButton onPress={() => { dispatch(signUp(true)) }} title={t('signIn')} />
+                <MaterialButton onPress={() => { dispatch(authorizate({ email, password })) }} title={t('signIn')} />
                 <LinklButton onPress={navigateToRegistrationView} title={t('needSignUp')} isDark={dark} />
             </View>
         </KeyboardAvoidingView>

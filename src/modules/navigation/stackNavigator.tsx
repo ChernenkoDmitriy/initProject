@@ -13,6 +13,9 @@ interface RootState {
     appState: {
         isSignUp: boolean,
         isLoadingSplashView: boolean,
+    },
+    navigationParam: {
+        screenAndParams: Object
     }
 }
 
@@ -23,6 +26,7 @@ const selectIsLoadingSplashView = (state: RootState) => state.appState.isLoading
 export const AppStackNavigator: FC = () => {
     const isSignUp = useSelector(selectIsSignUp);
     const isLoadingSplashView = useSelector(selectIsLoadingSplashView);
+
 
     return (
         <Stack.Navigator >

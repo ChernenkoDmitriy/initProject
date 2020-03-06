@@ -2,9 +2,9 @@ import { applyMiddleware, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension'; // for UI redux logger
 import rootReducer from './rootReducer';
-import rootSaga from '../saga';
 import { writeToStorage } from './middlewareRedux';
 import { IKeychain } from '../storages/keychain';
+import rootSaga from '../saga/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
